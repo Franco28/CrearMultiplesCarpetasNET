@@ -1,0 +1,6 @@
+C:\Users\franc\Desktop\CreadorDeCarpetas\CreadorDeCarpetas\bin\Release\CreadorDeCarpetas.exe.config
+C:\Users\franc\Desktop\CreadorDeCarpetas\CreadorDeCarpetas\bin\Release\CreadorDeCarpetas.exe
+C:\Users\franc\Desktop\CreadorDeCarpetas\CreadorDeCarpetas\obj\Release\CreadorDeCarpetas.MainForm.resources
+C:\Users\franc\Desktop\CreadorDeCarpetas\CreadorDeCarpetas\obj\Release\CreadorDeCarpetas.csproj.GenerateResource.cache
+C:\Users\franc\Desktop\CreadorDeCarpetas\CreadorDeCarpetas\obj\Release\CreadorDeCarpetas.csproj.CoreCompileInputs.cache
+C:\Users\franc\Desktop\CreadorDeCarpetas\CreadorDeCarpetas\obj\Release\CreadorDeCarpetas.exe
