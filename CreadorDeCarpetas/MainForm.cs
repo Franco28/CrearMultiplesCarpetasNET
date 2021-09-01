@@ -43,6 +43,25 @@ namespace CreadorDeCarpetas
         private void OnChanged(object source, FileSystemEventArgs e)
         {
             consoleA("\nEl archivo: {" + e.FullPath + "}  {" + e.ChangeType + "}\n");
+
+            if (e.ChangeType.ToString() == "Deleted")
+            {
+                var MyIni = new IniFile();
+
+                if (!File.Exists(exePath + @"\CreadorDeCarpetas.ini"))
+                {
+                    consoleA("<CreadorDeCarpetas.ini> creado!");
+                    MyIni.Write("FolderPath", exePath);
+                }
+                else
+                {
+                    if (!MyIni.KeyExists("FolderPath"))
+                    {
+                        consoleA("<CreadorDeCarpetas.ini <FolderPath>> creado!");
+                        MyIni.Write("FolderPath", exePath);
+                    }
+                }
+            }
         }
 
         private void OnRenamed(object source, RenamedEventArgs e)
@@ -53,9 +72,24 @@ namespace CreadorDeCarpetas
         private void MainForm_Load(object sender, EventArgs e)
         {
             progressBar.Hide();
-            CreateFileWatcher();
+
             var MyIni = new IniFile();
-            MyIni.Write("FolderPath", exePath);
+
+            if (!File.Exists(exePath + @"\CreadorDeCarpetas.ini"))
+            {
+                consoleA("<CreadorDeCarpetas.ini> creado!");
+                MyIni.Write("FolderPath", exePath);
+            } 
+            else
+            {
+                if (!MyIni.KeyExists("FolderPath"))
+                {
+                    consoleA("<CreadorDeCarpetas.ini <FolderPath>> creado!");
+                    MyIni.Write("FolderPath", exePath);
+                }
+            }
+
+            CreateFileWatcher();
             consoleA("\nDirectorio Actual: " + MyIni.Read("FolderPath") + "\n");
         }
 
@@ -153,6 +187,12 @@ namespace CreadorDeCarpetas
                     MyIni.Write("FolderPath", folderDlg.SelectedPath);
                     console.Clear();
                     consoleA("Directorio Actual: " + MyIni.Read("FolderPath"));
+                } 
+                else
+                {
+                    var MyIni = new IniFile();
+                    MyIni.Write("FolderPath", exePath);
+                    return;
                 }
             }
             catch (IOException ex)
