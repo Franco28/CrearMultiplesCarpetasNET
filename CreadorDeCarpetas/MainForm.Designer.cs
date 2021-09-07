@@ -40,6 +40,10 @@ namespace CreadorDeCarpetas
             this.buttonCambiarCarpeta = new System.Windows.Forms.Button();
             this.console = new System.Windows.Forms.RichTextBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.groupBox0 = new System.Windows.Forms.GroupBox();
+            this.rdbSI = new System.Windows.Forms.RadioButton();
+            this.rdbNO = new System.Windows.Forms.RadioButton();
+            this.groupBox0.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxNombre
@@ -48,7 +52,7 @@ namespace CreadorDeCarpetas
             this.textBoxNombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNombre.ForeColor = System.Drawing.Color.White;
             this.textBoxNombre.Location = new System.Drawing.Point(11, 431);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxNombre.MaxLength = 20;
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(315, 30);
@@ -72,7 +76,7 @@ namespace CreadorDeCarpetas
             this.buttonCrearCarpetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCrearCarpetas.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCrearCarpetas.Location = new System.Drawing.Point(13, 563);
-            this.buttonCrearCarpetas.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCrearCarpetas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCrearCarpetas.Name = "buttonCrearCarpetas";
             this.buttonCrearCarpetas.Size = new System.Drawing.Size(537, 46);
             this.buttonCrearCarpetas.TabIndex = 2;
@@ -118,7 +122,7 @@ namespace CreadorDeCarpetas
             this.textBoxCantidad.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCantidad.ForeColor = System.Drawing.Color.White;
             this.textBoxCantidad.Location = new System.Drawing.Point(13, 508);
-            this.textBoxCantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxCantidad.MaxLength = 2;
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(313, 30);
@@ -134,7 +138,7 @@ namespace CreadorDeCarpetas
             this.buttonCambiarCarpeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCambiarCarpeta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCambiarCarpeta.Location = new System.Drawing.Point(333, 328);
-            this.buttonCambiarCarpeta.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCambiarCarpeta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCambiarCarpeta.Name = "buttonCambiarCarpeta";
             this.buttonCambiarCarpeta.Size = new System.Drawing.Size(217, 46);
             this.buttonCambiarCarpeta.TabIndex = 9;
@@ -148,10 +152,10 @@ namespace CreadorDeCarpetas
             this.console.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.console.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.console.ForeColor = System.Drawing.Color.Yellow;
-            this.console.Location = new System.Drawing.Point(9, 70);
+            this.console.Location = new System.Drawing.Point(4, 71);
             this.console.Name = "console";
             this.console.ReadOnly = true;
-            this.console.Size = new System.Drawing.Size(543, 253);
+            this.console.Size = new System.Drawing.Size(554, 252);
             this.console.TabIndex = 10;
             this.console.Text = "";
             // 
@@ -159,10 +163,49 @@ namespace CreadorDeCarpetas
             // 
             this.progressBar.BackColor = System.Drawing.Color.Black;
             this.progressBar.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.progressBar.Location = new System.Drawing.Point(13, 329);
+            this.progressBar.Location = new System.Drawing.Point(13, 328);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(313, 45);
+            this.progressBar.Size = new System.Drawing.Size(313, 46);
             this.progressBar.TabIndex = 11;
+            // 
+            // groupBox0
+            // 
+            this.groupBox0.Controls.Add(this.rdbNO);
+            this.groupBox0.Controls.Add(this.rdbSI);
+            this.groupBox0.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox0.ForeColor = System.Drawing.Color.White;
+            this.groupBox0.Location = new System.Drawing.Point(333, 499);
+            this.groupBox0.Name = "groupBox0";
+            this.groupBox0.Size = new System.Drawing.Size(101, 39);
+            this.groupBox0.TabIndex = 12;
+            this.groupBox0.TabStop = false;
+            this.groupBox0.Text = "Incluir 0?";
+            // 
+            // rdbSI
+            // 
+            this.rdbSI.AutoSize = true;
+            this.rdbSI.Checked = true;
+            this.rdbSI.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbSI.Location = new System.Drawing.Point(6, 14);
+            this.rdbSI.Name = "rdbSI";
+            this.rdbSI.Size = new System.Drawing.Size(34, 19);
+            this.rdbSI.TabIndex = 0;
+            this.rdbSI.TabStop = true;
+            this.rdbSI.Text = "SI";
+            this.rdbSI.UseVisualStyleBackColor = true;
+            this.rdbSI.CheckedChanged += new System.EventHandler(this.rdbSI_CheckedChanged);
+            // 
+            // rdbNO
+            // 
+            this.rdbNO.AutoSize = true;
+            this.rdbNO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbNO.Location = new System.Drawing.Point(46, 14);
+            this.rdbNO.Name = "rdbNO";
+            this.rdbNO.Size = new System.Drawing.Size(42, 19);
+            this.rdbNO.TabIndex = 1;
+            this.rdbNO.Text = "NO";
+            this.rdbNO.UseVisualStyleBackColor = true;
+            this.rdbNO.CheckedChanged += new System.EventHandler(this.rdbNO_CheckedChanged);
             // 
             // MainForm
             // 
@@ -170,6 +213,7 @@ namespace CreadorDeCarpetas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(561, 620);
+            this.Controls.Add(this.groupBox0);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.console);
             this.Controls.Add(this.buttonCambiarCarpeta);
@@ -184,13 +228,15 @@ namespace CreadorDeCarpetas
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Creador de Carpetas Por Franco28";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.groupBox0.ResumeLayout(false);
+            this.groupBox0.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,6 +254,9 @@ namespace CreadorDeCarpetas
         private System.Windows.Forms.Button buttonCambiarCarpeta;
         private System.Windows.Forms.RichTextBox console;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.GroupBox groupBox0;
+        private System.Windows.Forms.RadioButton rdbNO;
+        private System.Windows.Forms.RadioButton rdbSI;
     }
 }
 

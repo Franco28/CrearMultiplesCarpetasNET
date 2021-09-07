@@ -24,6 +24,27 @@ namespace CreadorDeCarpetas
             });
         }
 
+        private IniFile MyIni = new IniFile();
+
+        private void CreateINI()
+        {
+            if (!File.Exists(exePath + @"\CreadorDeCarpetas.ini"))
+            {
+                consoleA("<CreadorDeCarpetas.ini> creado!");
+                MyIni.Write("FolderPath", exePath);
+                MyIni.Write("Incluir0", "true");
+            }
+            else
+            {
+                if (!MyIni.KeyExists("FolderPath"))
+                {
+                    consoleA("<CreadorDeCarpetas.ini> creado!");
+                    MyIni.Write("FolderPath", exePath);
+                    MyIni.Write("Incluir0", "true");
+                }
+            }
+        }
+
         public void CreateFileWatcher()
         {
             FileSystemWatcher watcher = new FileSystemWatcher();
@@ -46,21 +67,7 @@ namespace CreadorDeCarpetas
 
             if (e.ChangeType.ToString() == "Deleted")
             {
-                var MyIni = new IniFile();
-
-                if (!File.Exists(exePath + @"\CreadorDeCarpetas.ini"))
-                {
-                    consoleA("<CreadorDeCarpetas.ini> creado!");
-                    MyIni.Write("FolderPath", exePath);
-                }
-                else
-                {
-                    if (!MyIni.KeyExists("FolderPath"))
-                    {
-                        consoleA("<CreadorDeCarpetas.ini <FolderPath>> creado!");
-                        MyIni.Write("FolderPath", exePath);
-                    }
-                }
+                CreateINI();
             }
         }
 
@@ -73,46 +80,25 @@ namespace CreadorDeCarpetas
         {
             progressBar.Hide();
 
-            var MyIni = new IniFile();
-
-            if (!File.Exists(exePath + @"\CreadorDeCarpetas.ini"))
-            {
-                consoleA("<CreadorDeCarpetas.ini> creado!");
-                MyIni.Write("FolderPath", exePath);
-            } 
-            else
-            {
-                if (!MyIni.KeyExists("FolderPath"))
-                {
-                    consoleA("<CreadorDeCarpetas.ini <FolderPath>> creado!");
-                    MyIni.Write("FolderPath", exePath);
-                }
-            }
-
+            CreateINI();
             CreateFileWatcher();
+
+            if (rdbNO.Checked == true)
+                MyIni.Write("Incluir0", "false");
+            else
+                MyIni.Write("Incluir0", "true");
+
             consoleA("\nDirectorio Actual: " + MyIni.Read("FolderPath") + "\n");
         }
 
-        private void buttonCrearCarpetas_ClickAsync(object sender, EventArgs e)
+        private void CreateFolders()
         {
-            if (textBoxNombre.Text == "")
-            {
-                MessageBox.Show("El casillero Nombre De Las Carpetas no puede estar vacio!", "Casillero Nombre De Las Carpetas vacio!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (textBoxCantidad.Text == "")
-            {
-                MessageBox.Show("El casillero Cantidad De Las Carpetas no puede estar vacio!", "Casillero Cantidad De Las Carpetas vacio!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             int cantidadCarpetas;
             string nombreCarpetas;
 
             try
             {
-                 cantidadCarpetas = int.Parse(textBoxCantidad.Text);
+                cantidadCarpetas = int.Parse(textBoxCantidad.Text);
             }
             catch (Exception)
             {
@@ -123,7 +109,7 @@ namespace CreadorDeCarpetas
             if (cantidadCarpetas > 20)
             {
                 DialogResult dialogResult = MessageBox.Show("Ingreso un total de: " + cantidadCarpetas + " carpetas y esto puede ser MUY PELIGROSO si su PC tiene poca memoria RAM y memoria ROM. Desea continuar?", "CUIDADO! PELIGRO!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                
+
                 if (dialogResult == DialogResult.No)
                     return;
             }
@@ -140,24 +126,54 @@ namespace CreadorDeCarpetas
             progressBar.Show();
             progressBar.Maximum = cantidadCarpetas;
 
-            for (var i = 0; i < cantidadCarpetas; i++)
+            if (rdbNO.Checked == true)
             {
-                progressBar.Value = i;
-                consoleA("\nCreando carpeta: {" + nombreCarpetas + "}");
-                EvaluatePath(nombreCarpetas + i.ToString());
-                console.Clear();
-                progressBar.Hide();
+                for (var i = 1; i < cantidadCarpetas; i++)
+                {
+                    progressBar.Value = i;
+                    consoleA("\nCreando carpeta: {" + nombreCarpetas + "}");
+                    EvaluatePath(nombreCarpetas + i.ToString());
+                    console.Clear();
+                    progressBar.Hide();
+                }
+            }
+            else if (rdbSI.Checked == true)
+            {
+                for (var i = 0; i < cantidadCarpetas; i++)
+                {
+                    progressBar.Value = i;
+                    consoleA("\nCreando carpeta: {" + nombreCarpetas + "}");
+                    EvaluatePath(nombreCarpetas + i.ToString());
+                    console.Clear();
+                    progressBar.Hide();
+                }
             }
 
-            var MyIni = new IniFile();
             consoleA("\nSe crearon {" + cantidadCarpetas + "} carpetas con exito en {" + MyIni.Read("FolderPath") + "}");
+        }
+
+        private void buttonCrearCarpetas_ClickAsync(object sender, EventArgs e)
+        {
+            if (textBoxNombre.Text == "")
+            {
+                MessageBox.Show("El casillero Nombre De Las Carpetas no puede estar vacio!", "Casillero Nombre De Las Carpetas vacio!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (textBoxCantidad.Text == "")
+            {
+                MessageBox.Show("El casillero Cantidad De Las Carpetas no puede estar vacio!", "Casillero Cantidad De Las Carpetas vacio!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Create folders
+            CreateFolders();
         }
 
         private String EvaluatePath(String path)
         {
             try
             {
-                var MyIni = new IniFile();
                 String folder = Path.GetDirectoryName(path);
 
                 if (!Directory.Exists(folder))
@@ -183,14 +199,12 @@ namespace CreadorDeCarpetas
                 DialogResult result = folderDlg.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    var MyIni = new IniFile();
                     MyIni.Write("FolderPath", folderDlg.SelectedPath);
                     console.Clear();
                     consoleA("Directorio Actual: " + MyIni.Read("FolderPath"));
                 } 
                 else
                 {
-                    var MyIni = new IniFile();
                     MyIni.Write("FolderPath", exePath);
                     return;
                 }
@@ -222,6 +236,18 @@ namespace CreadorDeCarpetas
                 else
                     textBoxCantidad.BackColor = Color.Black;
             }
+        }
+
+        private void rdbSI_CheckedChanged(object sender, EventArgs e)
+        {
+            MyIni.Write("Incluir0", "true");
+            console.Clear();
+        }
+
+        private void rdbNO_CheckedChanged(object sender, EventArgs e)
+        {
+            MyIni.Write("Incluir0", "false");
+            console.Clear();
         }
     }
 }
