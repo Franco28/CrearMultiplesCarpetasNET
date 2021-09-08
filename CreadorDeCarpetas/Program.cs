@@ -30,7 +30,16 @@ namespace CreadorDeCarpetas
 
         public static void Start()
         {
-            Application.Run(new MainForm());
+            try
+            {
+                Application.Run(new MainForm());
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("ERROR CRITICO: " + er.ToString(), "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Process.GetCurrentProcess().Kill();
+                Application.Exit();
+            }
         }
 
         [DllImport("User32.dll")]

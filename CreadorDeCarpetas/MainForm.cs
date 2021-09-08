@@ -19,7 +19,9 @@ namespace CreadorDeCarpetas
         }
 
         private string exePath = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
-        private IniFile MyIni = new IniFile();
+
+        // Ajustes .ini
+        private IniFile MyIni = new IniFile("Ajustes.ini");
 
         #region Engine
         public void consoleA(string message)
@@ -35,18 +37,18 @@ namespace CreadorDeCarpetas
         // Creo el archivo de config .ini
         private void CreateINI()
         {
-            if (!File.Exists(exePath + @"\*ini"))
+            if (!File.Exists(exePath + @"\Ajustes.ini"))
             {
-                consoleA("<CreadorDeCarpetas.ini> creado!");
+                consoleA("<Ajustes.ini> creado!");
                 MyIni.Write("FolderPath", exePath);
                 MyIni.Write("Incluir0", "true");
                 MyIni.Write("CRandom", "false");
             }
             else
             {
-                if (!MyIni.KeyExists("FolderPath"))
+                if (!MyIni.KeyExists("FolderPath") || !MyIni.KeyExists("Incluir0") || !MyIni.KeyExists("CRandom"))
                 {
-                    consoleA("<CreadorDeCarpetas.ini> creado!");
+                    consoleA("<Ajustes.ini> creado!");
                     MyIni.Write("FolderPath", exePath);
                     MyIni.Write("Incluir0", "true");
                     MyIni.Write("CRandom", "false");
@@ -60,7 +62,7 @@ namespace CreadorDeCarpetas
             watcher.Path = exePath;
             watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite
                | NotifyFilters.FileName | NotifyFilters.DirectoryName;
-            watcher.Filter = "*.ini";
+            watcher.Filter = "Ajustes.ini";
 
             watcher.Changed += new FileSystemEventHandler(OnChanged);
             watcher.Created += new FileSystemEventHandler(OnChanged);
