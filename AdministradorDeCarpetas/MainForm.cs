@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace CreadorDeCarpetas
+namespace AdministradorDeCarpetas
 {
     public partial class MainForm : Form
     {
@@ -15,7 +15,7 @@ namespace CreadorDeCarpetas
         {
             InitializeComponent();
 
-            labelTitle.Text = "Creador de Carpetas por Franco Mato (Franco28) v" + Application.ProductVersion;
+            labelTitle.Text = "Administrador De Carpetas por Franco Mato (Franco28) v" + Application.ProductVersion;
         }
 
         private string exePath = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
@@ -39,7 +39,7 @@ namespace CreadorDeCarpetas
         {
             if (!File.Exists(exePath + @"\Ajustes.ini"))
             {
-                consoleA("<Ajustes.ini> creado!");
+                consoleA("<Ajustes.ini>: {Creado}");
                 MyIni.Write("FolderPath", exePath);
                 MyIni.Write("Incluir0", "true");
                 MyIni.Write("CRandom", "false");
@@ -48,7 +48,7 @@ namespace CreadorDeCarpetas
             {
                 if (!MyIni.KeyExists("FolderPath") || !MyIni.KeyExists("Incluir0") || !MyIni.KeyExists("CRandom"))
                 {
-                    consoleA("<Ajustes.ini> creado!");
+                    consoleA("<Ajustes.ini>: {Actualizado}");
                     MyIni.Write("FolderPath", exePath);
                     MyIni.Write("Incluir0", "true");
                     MyIni.Write("CRandom", "false");

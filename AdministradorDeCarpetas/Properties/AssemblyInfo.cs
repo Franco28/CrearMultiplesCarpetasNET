@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Creador De Carpetas")]
+[assembly: AssemblyTitle("Administrador De Carpetas")]
 [assembly: AssemblyDescription(".NET App para crear multiples carpetas seguidas por una numeracion")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany(".NET Group By Franco Mato")]
-[assembly: AssemblyProduct("Creador De Carpetas")]
+[assembly: AssemblyProduct("Administrador De Carpetas")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark(".NET Group By Franco Mato")]
 [assembly: AssemblyCulture("")]

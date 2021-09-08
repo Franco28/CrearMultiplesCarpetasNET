@@ -1,5 +1,5 @@
 ﻿
-namespace CreadorDeCarpetas
+namespace AdministradorDeCarpetas
 {
     partial class MainForm
     {
@@ -159,7 +159,7 @@ namespace CreadorDeCarpetas
             this.groupBox0.Controls.Add(this.rdbSI);
             this.groupBox0.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox0.ForeColor = System.Drawing.Color.White;
-            this.groupBox0.Location = new System.Drawing.Point(446, 387);
+            this.groupBox0.Location = new System.Drawing.Point(446, 391);
             this.groupBox0.Name = "groupBox0";
             this.groupBox0.Size = new System.Drawing.Size(197, 39);
             this.groupBox0.TabIndex = 12;
@@ -197,7 +197,7 @@ namespace CreadorDeCarpetas
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(443, 530);
+            this.label1.Location = new System.Drawing.Point(443, 540);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 16);
             this.label1.TabIndex = 13;
@@ -303,7 +303,7 @@ namespace CreadorDeCarpetas
             this.buttonClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClear.Image = global::CreadorDeCarpetas.Properties.Resources.clean;
+            this.buttonClear.Image = global::AdministradorDeCarpetas.Properties.Resources.clean;
             this.buttonClear.Location = new System.Drawing.Point(11, 218);
             this.buttonClear.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClear.Name = "buttonClear";
@@ -321,7 +321,7 @@ namespace CreadorDeCarpetas
             this.buttonGitHub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.buttonGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGitHub.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGitHub.Image = global::CreadorDeCarpetas.Properties.Resources.git;
+            this.buttonGitHub.Image = global::AdministradorDeCarpetas.Properties.Resources.git;
             this.buttonGitHub.Location = new System.Drawing.Point(11, 125);
             this.buttonGitHub.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGitHub.Name = "buttonGitHub";
@@ -339,7 +339,7 @@ namespace CreadorDeCarpetas
             this.buttonTelegram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.buttonTelegram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTelegram.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTelegram.Image = global::CreadorDeCarpetas.Properties.Resources.telegram;
+            this.buttonTelegram.Image = global::AdministradorDeCarpetas.Properties.Resources.telegram;
             this.buttonTelegram.Location = new System.Drawing.Point(11, 66);
             this.buttonTelegram.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTelegram.Name = "buttonTelegram";
@@ -358,10 +358,10 @@ namespace CreadorDeCarpetas
             this.buttonCambiarCarpeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCambiarCarpeta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCambiarCarpeta.Image = ((System.Drawing.Image)(resources.GetObject("buttonCambiarCarpeta.Image")));
-            this.buttonCambiarCarpeta.Location = new System.Drawing.Point(472, 548);
+            this.buttonCambiarCarpeta.Location = new System.Drawing.Point(446, 561);
             this.buttonCambiarCarpeta.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCambiarCarpeta.Name = "buttonCambiarCarpeta";
-            this.buttonCambiarCarpeta.Size = new System.Drawing.Size(59, 51);
+            this.buttonCambiarCarpeta.Size = new System.Drawing.Size(197, 51);
             this.buttonCambiarCarpeta.TabIndex = 9;
             this.buttonCambiarCarpeta.UseVisualStyleBackColor = true;
             this.buttonCambiarCarpeta.Click += new System.EventHandler(this.buttonCambiarCarpeta_Click);
@@ -369,7 +369,7 @@ namespace CreadorDeCarpetas
             // labelIcon
             // 
             this.labelIcon.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIcon.Image = global::CreadorDeCarpetas.Properties.Resources.iconFolder;
+            this.labelIcon.Image = global::AdministradorDeCarpetas.Properties.Resources.iconFolder;
             this.labelIcon.Location = new System.Drawing.Point(6, 9);
             this.labelIcon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelIcon.Name = "labelIcon";
@@ -392,7 +392,7 @@ namespace CreadorDeCarpetas
             this.groupBox1.Controls.Add(this.rdbRandomSI);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(446, 473);
+            this.groupBox1.Location = new System.Drawing.Point(446, 487);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(197, 39);
             this.groupBox1.TabIndex = 26;
@@ -429,7 +429,7 @@ namespace CreadorDeCarpetas
             // 
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(446, 347);
+            this.label10.Location = new System.Drawing.Point(446, 351);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(197, 37);
             this.label10.TabIndex = 27;
@@ -450,7 +450,7 @@ namespace CreadorDeCarpetas
             // 
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(446, 431);
+            this.label12.Location = new System.Drawing.Point(446, 445);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(197, 39);
             this.label12.TabIndex = 29;
@@ -511,7 +511,7 @@ namespace CreadorDeCarpetas
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Creador de Carpetas Por Franco Mato (Franco28)";
+            this.Text = "Administrador De Carpetas Por Franco Mato (Franco28)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox0.ResumeLayout(false);

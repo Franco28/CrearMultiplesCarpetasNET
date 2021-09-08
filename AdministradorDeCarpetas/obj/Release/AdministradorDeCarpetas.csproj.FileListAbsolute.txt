@@ -1,0 +1,7 @@
+C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\AdministradorDeCarpetas\bin\Release\Administrador De Carpetas.exe.config
+C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\AdministradorDeCarpetas\bin\Release\Administrador De Carpetas.exe
+C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\AdministradorDeCarpetas\obj\Release\AdministradorDeCarpetas.MainForm.resources
+C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\AdministradorDeCarpetas\obj\Release\AdministradorDeCarpetas.Properties.Resources.resources
+C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\AdministradorDeCarpetas\obj\Release\AdministradorDeCarpetas.csproj.GenerateResource.cache
+C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\AdministradorDeCarpetas\obj\Release\AdministradorDeCarpetas.csproj.CoreCompileInputs.cache
+C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\AdministradorDeCarpetas\obj\Release\Administrador De Carpetas.exe
