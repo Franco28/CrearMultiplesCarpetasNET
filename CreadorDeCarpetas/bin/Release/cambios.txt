@@ -4,6 +4,9 @@
 
 * [Añadido] Nuevos iconos
 * [Añadido] Nueva funcion para incluir o no el 0 en las carpetas, por ejemplo "carpeta 0, carpeta 1, carpeta 2..." o "carpeta 1, "carpeta 2..."
+* [Añadido] Nueva funcion para crear carpetas con nombres random
+* [Añadido] Set Dpi Aware (elimina el blur del formulario)
+* [Añadido] Alerta cuando se abre mas de un vez el programa
 
 ------------
 - v1.0.0.0 -
