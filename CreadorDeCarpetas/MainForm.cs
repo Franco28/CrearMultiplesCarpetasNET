@@ -3,6 +3,8 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace CreadorDeCarpetas
@@ -33,7 +35,7 @@ namespace CreadorDeCarpetas
         // Creo el archivo de config .ini
         private void CreateINI()
         {
-            if (!File.Exists(exePath + @"\CreadorDeCarpetas.ini"))
+            if (!File.Exists(exePath + @"\*ini"))
             {
                 consoleA("<CreadorDeCarpetas.ini> creado!");
                 MyIni.Write("FolderPath", exePath);
@@ -111,8 +113,8 @@ namespace CreadorDeCarpetas
 
             consoleA("Parchando textos y numeros...");
 
-            nombreCarpetas = textBoxNombre.Text;
-            cantidadCarpetas = int.Parse(textBoxCantidad.Text) + 1;
+            cantidadCarpetas = int.Parse(textBoxCantidad.Text);
+            nombreCarpetas = NormalizeDirName(textBoxNombre.Text);
 
             consoleA("Parchando textos y numeros... {OK}");
 
@@ -186,6 +188,24 @@ namespace CreadorDeCarpetas
             }
             return path;
         }
+
+        // Arreglo el nombre de las carpetas
+        private string NormalizeDirName(string dirName)
+        {
+            try
+            {
+                string invalidChars = Regex.Escape(new string(Path.GetInvalidPathChars()));
+                string invalidRegStr = string.Format(@"([{0}]*\.+$)|([{0}]+)", invalidChars);
+
+                return Regex.Replace(dirName, invalidRegStr, "_");
+            }
+            catch (Exception er)
+            {
+                consoleA("\nCreando carpeta: { ERROR }");
+                MessageBox.Show("Error al parchar el nombre de la carpeta: " + er.ToString(), "Error al parchar carpeta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return er.ToString();
+            }
+        }
         #endregion Engine
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -237,8 +257,8 @@ namespace CreadorDeCarpetas
             }
 
             // Create folders
-            CreateFolders();
-        }      
+            CreateFolders();      
+        }
 
         private void buttonCambiarCarpeta_Click(object sender, EventArgs e)
         {
@@ -272,10 +292,34 @@ namespace CreadorDeCarpetas
                 e.Handled = true;         
         }
 
+        private void textBoxNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxNombre.Text == "")
+            {
+                labelCharError.Text = "";
+                textBoxNombre.BackColor = Color.Black;
+                return;
+            } 
+            else
+            {
+                if (textBoxNombre.Text.Contains("<") || textBoxNombre.Text.Contains(">") || textBoxNombre.Text.Contains(@"\") || textBoxNombre.Text.Contains("/") || textBoxNombre.Text.Contains(":") || textBoxNombre.Text.Contains("*") || textBoxNombre.Text.Contains("?") || textBoxNombre.Text.Contains("|") || textBoxNombre.Text.Contains('"'))
+                {
+                    labelCharError.Text = @"El nombre de la carpeta no puede incluir \ / : * ? < > |";
+                    textBoxNombre.BackColor = Color.Red;
+                }
+                else
+                {
+                    labelCharError.Text = "";
+                    textBoxNombre.BackColor = Color.Black;
+                }
+            }
+        }
+
         private void textBoxCantidad_TextChanged(object sender, EventArgs e)
         {
             if (textBoxCantidad.Text == "")
             {
+                textBoxNombre.BackColor = Color.Black;
                 return;
             }
             else
@@ -326,6 +370,20 @@ namespace CreadorDeCarpetas
         private void buttonOpenFolder_Click(object sender, EventArgs e)
         {
             Process.Start(MyIni.Read("FolderPath"));
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                Process.GetCurrentProcess().Kill();
+                Application.Exit();
+            } 
+            catch (Exception er)
+            {
+                MessageBox.Show("Error al cerrar el programa: " + er.ToString(), "Error al cerrar el programa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }

@@ -29,6 +29,9 @@
   <PropertyGroup>
     <RootNamespace>CreadorDeCarpetas</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyName>Administrador De Carpetas</AssemblyName>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />

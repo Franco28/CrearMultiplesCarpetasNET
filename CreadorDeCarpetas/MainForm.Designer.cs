@@ -61,6 +61,7 @@ namespace CreadorDeCarpetas
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.labelCharError = new System.Windows.Forms.Label();
             this.groupBox0.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +77,7 @@ namespace CreadorDeCarpetas
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(377, 30);
             this.textBoxNombre.TabIndex = 0;
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // buttonCrearCarpetas
             // 
@@ -96,7 +98,7 @@ namespace CreadorDeCarpetas
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 397);
+            this.label3.Location = new System.Drawing.Point(9, 389);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(320, 22);
@@ -455,12 +457,24 @@ namespace CreadorDeCarpetas
             this.label12.Text = "* Crea carpetas con nombres RANDOM";
             this.label12.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // labelCharError
+            // 
+            this.labelCharError.AutoSize = true;
+            this.labelCharError.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCharError.ForeColor = System.Drawing.Color.Red;
+            this.labelCharError.Location = new System.Drawing.Point(15, 413);
+            this.labelCharError.Name = "labelCharError";
+            this.labelCharError.Size = new System.Drawing.Size(0, 15);
+            this.labelCharError.TabIndex = 30;
+            this.labelCharError.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(650, 620);
+            this.Controls.Add(this.labelCharError);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -498,6 +512,7 @@ namespace CreadorDeCarpetas
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Creador de Carpetas Por Franco Mato (Franco28)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox0.ResumeLayout(false);
             this.groupBox0.PerformLayout();
@@ -541,6 +556,7 @@ namespace CreadorDeCarpetas
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelCharError;
     }
 }
 
