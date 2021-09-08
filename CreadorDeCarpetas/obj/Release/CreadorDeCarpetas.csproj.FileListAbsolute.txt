@@ -11,3 +11,5 @@ C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\CreadorDeCarpetas\obj\
 C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\CreadorDeCarpetas\obj\Release\CreadorDeCarpetas.csproj.GenerateResource.cache
 C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\CreadorDeCarpetas\obj\Release\CreadorDeCarpetas.csproj.CoreCompileInputs.cache
 C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\CreadorDeCarpetas\obj\Release\CreadorDeCarpetas.exe
+C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\CreadorDeCarpetas\obj\Release\CreadorDeCarpetas.Settings.resources
+C:\Users\franc\Documents\GitHub\CrearMultiplesCarpetasNET\CreadorDeCarpetas\obj\Release\CreadorDeCarpetas.csproj.AssemblyReference.cache

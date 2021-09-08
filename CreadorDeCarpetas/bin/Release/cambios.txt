@@ -1,0 +1,12 @@
+------------
+- v1.0.0.1 -
+------------
+
+* [Añadido] Nuevos iconos
+* [Añadido] Nueva funcion para incluir o no el 0 en las carpetas, por ejemplo "carpeta 0, carpeta 1, carpeta 2..." o "carpeta 1, "carpeta 2..."
+
+------------
+- v1.0.0.0 -
+------------
+
+* Inicio de la APP

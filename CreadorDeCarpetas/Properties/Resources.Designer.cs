@@ -63,6 +63,46 @@ namespace CreadorDeCarpetas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1493293_folder_open_file_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("_1493293_folder_open_file_icon__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _23417_add_folder_new_plus_icon {
+            get {
+                object obj = ResourceManager.GetObject("_23417_add_folder_new_plus_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _95925_application_settings_icon {
+            get {
+                object obj = ResourceManager.GetObject("_95925_application_settings_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _95925_application_settings_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("_95925_application_settings_icon__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap changeDIR {
             get {
                 object obj = ResourceManager.GetObject("changeDIR", resourceCulture);

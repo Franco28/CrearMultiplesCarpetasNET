@@ -38,6 +38,7 @@ namespace CreadorDeCarpetas
                 consoleA("<CreadorDeCarpetas.ini> creado!");
                 MyIni.Write("FolderPath", exePath);
                 MyIni.Write("Incluir0", "true");
+                MyIni.Write("CRandom", "false");
             }
             else
             {
@@ -46,6 +47,7 @@ namespace CreadorDeCarpetas
                     consoleA("<CreadorDeCarpetas.ini> creado!");
                     MyIni.Write("FolderPath", exePath);
                     MyIni.Write("Incluir0", "true");
+                    MyIni.Write("CRandom", "false");
                 }
             }
         }
@@ -117,13 +119,20 @@ namespace CreadorDeCarpetas
             progressBar.Show();
             progressBar.Maximum = cantidadCarpetas;
 
+            Random rnd = new Random();
+
             if (rdbNO.Checked == true)
             {
                 for (var i = 1; i < cantidadCarpetas; i++)
                 {
                     progressBar.Value = i;
                     consoleA("\nCreando carpeta: {" + nombreCarpetas + "}");
-                    EvaluatePath(nombreCarpetas + i.ToString());
+
+                    if (rdbRandomSI.Checked == true)
+                        EvaluatePath(GenerateName(rnd, i));
+                    else
+                        EvaluatePath(nombreCarpetas + i.ToString());
+
                     progressBar.Hide();
                 }
             }
@@ -133,7 +142,12 @@ namespace CreadorDeCarpetas
                 {
                     progressBar.Value = i;
                     consoleA("Creando carpeta: {" + nombreCarpetas + "}");
-                    EvaluatePath(nombreCarpetas + i.ToString());
+
+                    if (rdbRandomSI.Checked == true)
+                        EvaluatePath(GenerateName(rnd, i));
+                    else
+                        EvaluatePath(nombreCarpetas + i.ToString());
+
                     progressBar.Hide();
                 }
             }
@@ -141,8 +155,20 @@ namespace CreadorDeCarpetas
             consoleA("Se crearon {" + cantidadCarpetas + "} carpetas con exito en {" + MyIni.Read("FolderPath") + "}");
         }
 
+        // Carpetas con nombres random
+        private string GenerateName(Random random, int length)
+        {
+            const string ValidChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            char[] chars = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                chars[i] = ValidChars[random.Next(ValidChars.Length)];
+            }
+            return new string(chars);
+        }
+
         // Evaluo la ruta y creo la carpeta
-        private String EvaluatePath(String path)
+        private string EvaluatePath(String path)
         {
             try
             {
@@ -168,10 +194,25 @@ namespace CreadorDeCarpetas
 
             CreateINI();
 
+            if (MyIni.Read("Incluir0") == "true")
+                rdbSI.Checked = true;
+            else
+                rdbNO.Checked = true;
+
+            if (MyIni.Read("CRandom") == "true")
+                rdbRandomSI.Checked = true;
+            else
+                rdbRandomNO.Checked = true;
+
             if (rdbNO.Checked == true)
                 MyIni.Write("Incluir0", "false");
             else
                 MyIni.Write("Incluir0", "true");
+
+            if (rdbRandomNO.Checked == true)
+                MyIni.Write("CRandom", "false");
+            else
+                MyIni.Write("CRandom", "true");
 
             labelDIR.Text = MyIni.Read("FolderPath");
 
@@ -180,10 +221,13 @@ namespace CreadorDeCarpetas
 
         private void buttonCrearCarpetas_ClickAsync(object sender, EventArgs e)
         {
-            if (textBoxNombre.Text == "")
+            if (rdbRandomNO.Checked == true)
             {
-                MessageBox.Show("El casillero Nombre De Las Carpetas no puede estar vacio!", "Casillero Nombre De Las Carpetas vacio!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (textBoxNombre.Text == "")
+                {
+                    MessageBox.Show("El casillero Nombre De Las Carpetas no puede estar vacio!", "Casillero Nombre De Las Carpetas vacio!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
 
             if (textBoxCantidad.Text == "")
@@ -252,6 +296,16 @@ namespace CreadorDeCarpetas
         private void rdbNO_CheckedChanged(object sender, EventArgs e)
         {
             MyIni.Write("Incluir0", "false");
+        }
+
+        private void rdbRandomSI_CheckedChanged(object sender, EventArgs e)
+        {
+            MyIni.Write("CRandom", "true");
+        }
+
+        private void rdbRandomNO_CheckedChanged(object sender, EventArgs e)
+        {
+            MyIni.Write("CRandom", "false");
         }
 
         private void buttonGitHub_Click(object sender, EventArgs e)
