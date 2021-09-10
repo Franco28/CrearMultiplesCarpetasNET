@@ -43,6 +43,7 @@ namespace AdministradorDeCarpetas
                 MyIni.Write("FolderPath", exePath);
                 MyIni.Write("Incluir0", "true");
                 MyIni.Write("CRandom", "false");
+                MyIni.Write("Cifrado", "false");
             }
             else
             {
@@ -52,6 +53,7 @@ namespace AdministradorDeCarpetas
                     MyIni.Write("FolderPath", exePath);
                     MyIni.Write("Incluir0", "true");
                     MyIni.Write("CRandom", "false");
+                    MyIni.Write("Cifrado", "false");
                 }
             }
         }
@@ -212,9 +214,13 @@ namespace AdministradorDeCarpetas
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // https://www.iconfinder.com/search?q=cryptography&price=free
             progressBar.Hide();
 
             CreateINI();
+
+            if (MyIni.KeyExists("CCifrada"))
+                txtBoxPassword.Text = MyIni.Read("CCifrada");
 
             if (MyIni.Read("Incluir0") == "true")
                 rdbSI.Checked = true;
@@ -226,6 +232,11 @@ namespace AdministradorDeCarpetas
             else
                 rdbRandomNO.Checked = true;
 
+            if (MyIni.Read("Cifrar") == "true")
+                rdbCifrarSI.Checked = true;
+            else
+                rdbCifrarNO.Checked = true;
+
             if (rdbNO.Checked == true)
                 MyIni.Write("Incluir0", "false");
             else
@@ -235,6 +246,11 @@ namespace AdministradorDeCarpetas
                 MyIni.Write("CRandom", "false");
             else
                 MyIni.Write("CRandom", "true");
+
+            if (rdbCifrarNO.Checked == true)
+                MyIni.Write("Cifrado", "false");
+            else
+                MyIni.Write("Cifrado", "true");
 
             labelDIR.Text = MyIni.Read("FolderPath");
 
@@ -354,6 +370,16 @@ namespace AdministradorDeCarpetas
             MyIni.Write("CRandom", "false");
         }
 
+        private void rdbCifrarSI_CheckedChanged(object sender, EventArgs e)
+        {
+            MyIni.Write("Cifrado", "true");
+        }
+
+        private void rdbCifrarNO_CheckedChanged(object sender, EventArgs e)
+        {
+            MyIni.Write("Cifrado", "false");
+        }
+
         private void buttonGitHub_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/Franco28");
@@ -386,6 +412,53 @@ namespace AdministradorDeCarpetas
                 MessageBox.Show("Error al cerrar el programa: " + er.ToString(), "Error al cerrar el programa", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private string RandomPwd(Random random, int length)
+        {
+            const string ValidChars = "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz?!¿*´{.-_<>%&/#";
+            char[] chars = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                chars[i] = ValidChars[random.Next(ValidChars.Length)];
+            }
+            return new string(chars);
+        }
+
+        private void buttonGenerarRandom_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            txtBoxPassword.Text = RandomPwd(rnd, 15);
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtBoxPassword.Text == string.Empty)
+                return;
+
+            if (txtBoxPWSCifradro.Text == string.Empty)
+            {
+                MessageBox.Show("Ingrese una contraseña para el cifrado!");
+                return;
+            }
+
+            MyIni.Write("CCifrada", EncryptString.StringCipher.Encrypt(txtBoxPassword.Text, txtBoxPWSCifradro.Text));
+
+            txtBoxPWSCifradro.Text = "";
+            txtBoxPassword.Text = "";
+        }
+
+        private void buttonDescifrar_Click(object sender, EventArgs e)
+        {
+            if (txtBoxPWSCifradro.Text == string.Empty)
+            {
+                MessageBox.Show("Ingrese la contraseña que uso para el cifrado!");
+                return;
+            }
+
+            string decryptedstring = EncryptString.StringCipher.Decrypt(txtBoxPassword.Text, txtBoxPWSCifradro.Text);
+
+            txtBoxPassword.Text = decryptedstring;
         }
     }
 }

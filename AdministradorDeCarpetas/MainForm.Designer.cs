@@ -55,15 +55,32 @@ namespace AdministradorDeCarpetas
             this.buttonCambiarCarpeta = new System.Windows.Forms.Button();
             this.labelIcon = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxRandom = new System.Windows.Forms.GroupBox();
             this.rdbRandomNO = new System.Windows.Forms.RadioButton();
             this.rdbRandomSI = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.labelCharError = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtBoxPassword = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.groupBoxCifrar = new System.Windows.Forms.GroupBox();
+            this.rdbCifrarNO = new System.Windows.Forms.RadioButton();
+            this.rdbCifrarSI = new System.Windows.Forms.RadioButton();
+            this.label19 = new System.Windows.Forms.Label();
+            this.buttonGuardar = new System.Windows.Forms.Button();
+            this.buttonGenerarRandom = new System.Windows.Forms.Button();
+            this.buttonDescifrar = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtBoxPWSCifradro = new System.Windows.Forms.TextBox();
             this.groupBox0.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxRandom.SuspendLayout();
+            this.groupBoxCifrar.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxNombre
@@ -71,7 +88,7 @@ namespace AdministradorDeCarpetas
             this.textBoxNombre.BackColor = System.Drawing.SystemColors.Desktop;
             this.textBoxNombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNombre.ForeColor = System.Drawing.Color.White;
-            this.textBoxNombre.Location = new System.Drawing.Point(11, 431);
+            this.textBoxNombre.Location = new System.Drawing.Point(11, 421);
             this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNombre.MaxLength = 20;
             this.textBoxNombre.Name = "textBoxNombre";
@@ -98,7 +115,7 @@ namespace AdministradorDeCarpetas
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 389);
+            this.label3.Location = new System.Drawing.Point(9, 379);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(320, 22);
@@ -109,7 +126,7 @@ namespace AdministradorDeCarpetas
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 474);
+            this.label4.Location = new System.Drawing.Point(9, 457);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(379, 22);
@@ -121,7 +138,7 @@ namespace AdministradorDeCarpetas
             this.textBoxCantidad.BackColor = System.Drawing.SystemColors.Desktop;
             this.textBoxCantidad.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCantidad.ForeColor = System.Drawing.Color.White;
-            this.textBoxCantidad.Location = new System.Drawing.Point(13, 508);
+            this.textBoxCantidad.Location = new System.Drawing.Point(13, 491);
             this.textBoxCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCantidad.MaxLength = 2;
             this.textBoxCantidad.Name = "textBoxCantidad";
@@ -137,10 +154,10 @@ namespace AdministradorDeCarpetas
             this.console.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.console.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.console.ForeColor = System.Drawing.Color.Yellow;
-            this.console.Location = new System.Drawing.Point(85, 218);
+            this.console.Location = new System.Drawing.Point(64, 87);
             this.console.Name = "console";
             this.console.ReadOnly = true;
-            this.console.Size = new System.Drawing.Size(560, 94);
+            this.console.Size = new System.Drawing.Size(1005, 94);
             this.console.TabIndex = 10;
             this.console.Text = "";
             // 
@@ -159,7 +176,7 @@ namespace AdministradorDeCarpetas
             this.groupBox0.Controls.Add(this.rdbSI);
             this.groupBox0.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox0.ForeColor = System.Drawing.Color.White;
-            this.groupBox0.Location = new System.Drawing.Point(446, 391);
+            this.groupBox0.Location = new System.Drawing.Point(443, 408);
             this.groupBox0.Name = "groupBox0";
             this.groupBox0.Size = new System.Drawing.Size(197, 39);
             this.groupBox0.TabIndex = 12;
@@ -197,7 +214,7 @@ namespace AdministradorDeCarpetas
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(443, 540);
+            this.label1.Location = new System.Drawing.Point(677, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 16);
             this.label1.TabIndex = 13;
@@ -208,7 +225,7 @@ namespace AdministradorDeCarpetas
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gold;
-            this.label5.Location = new System.Drawing.Point(468, 315);
+            this.label5.Location = new System.Drawing.Point(465, 345);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 21);
             this.label5.TabIndex = 16;
@@ -219,7 +236,7 @@ namespace AdministradorDeCarpetas
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gold;
-            this.label6.Location = new System.Drawing.Point(38, 357);
+            this.label6.Location = new System.Drawing.Point(37, 346);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 21);
             this.label6.TabIndex = 17;
@@ -240,7 +257,7 @@ namespace AdministradorDeCarpetas
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(93, 70);
+            this.label2.Location = new System.Drawing.Point(9, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 23);
             this.label2.TabIndex = 20;
@@ -249,9 +266,9 @@ namespace AdministradorDeCarpetas
             // labelDIR
             // 
             this.labelDIR.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDIR.Location = new System.Drawing.Point(97, 121);
+            this.labelDIR.Location = new System.Drawing.Point(13, 235);
             this.labelDIR.Name = "labelDIR";
-            this.labelDIR.Size = new System.Drawing.Size(497, 77);
+            this.labelDIR.Size = new System.Drawing.Size(607, 77);
             this.labelDIR.TabIndex = 21;
             this.labelDIR.Text = "---";
             // 
@@ -259,7 +276,7 @@ namespace AdministradorDeCarpetas
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(94, 103);
+            this.label7.Location = new System.Drawing.Point(10, 217);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(143, 18);
             this.label7.TabIndex = 22;
@@ -270,7 +287,7 @@ namespace AdministradorDeCarpetas
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Gold;
-            this.label8.Location = new System.Drawing.Point(81, 198);
+            this.label8.Location = new System.Drawing.Point(7, 64);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 23);
             this.label8.TabIndex = 23;
@@ -286,10 +303,10 @@ namespace AdministradorDeCarpetas
             this.buttonOpenFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpenFolder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOpenFolder.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpenFolder.Image")));
-            this.buttonOpenFolder.Location = new System.Drawing.Point(598, 125);
+            this.buttonOpenFolder.Location = new System.Drawing.Point(625, 265);
             this.buttonOpenFolder.Margin = new System.Windows.Forms.Padding(2);
             this.buttonOpenFolder.Name = "buttonOpenFolder";
-            this.buttonOpenFolder.Size = new System.Drawing.Size(47, 73);
+            this.buttonOpenFolder.Size = new System.Drawing.Size(47, 47);
             this.buttonOpenFolder.TabIndex = 24;
             this.buttonOpenFolder.UseVisualStyleBackColor = true;
             this.buttonOpenFolder.Click += new System.EventHandler(this.buttonOpenFolder_Click);
@@ -304,10 +321,10 @@ namespace AdministradorDeCarpetas
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClear.Image = global::AdministradorDeCarpetas.Properties.Resources.clean;
-            this.buttonClear.Location = new System.Drawing.Point(11, 218);
+            this.buttonClear.Location = new System.Drawing.Point(11, 87);
             this.buttonClear.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(69, 94);
+            this.buttonClear.Size = new System.Drawing.Size(48, 94);
             this.buttonClear.TabIndex = 18;
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
@@ -322,10 +339,10 @@ namespace AdministradorDeCarpetas
             this.buttonGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGitHub.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGitHub.Image = global::AdministradorDeCarpetas.Properties.Resources.git;
-            this.buttonGitHub.Location = new System.Drawing.Point(11, 125);
+            this.buttonGitHub.Location = new System.Drawing.Point(1024, 546);
             this.buttonGitHub.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGitHub.Name = "buttonGitHub";
-            this.buttonGitHub.Size = new System.Drawing.Size(69, 55);
+            this.buttonGitHub.Size = new System.Drawing.Size(53, 51);
             this.buttonGitHub.TabIndex = 15;
             this.buttonGitHub.UseVisualStyleBackColor = true;
             this.buttonGitHub.Click += new System.EventHandler(this.buttonGitHub_Click);
@@ -340,10 +357,10 @@ namespace AdministradorDeCarpetas
             this.buttonTelegram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTelegram.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTelegram.Image = global::AdministradorDeCarpetas.Properties.Resources.telegram;
-            this.buttonTelegram.Location = new System.Drawing.Point(11, 66);
+            this.buttonTelegram.Location = new System.Drawing.Point(967, 546);
             this.buttonTelegram.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTelegram.Name = "buttonTelegram";
-            this.buttonTelegram.Size = new System.Drawing.Size(69, 55);
+            this.buttonTelegram.Size = new System.Drawing.Size(53, 51);
             this.buttonTelegram.TabIndex = 14;
             this.buttonTelegram.UseVisualStyleBackColor = true;
             this.buttonTelegram.Click += new System.EventHandler(this.buttonTelegram_Click);
@@ -358,10 +375,10 @@ namespace AdministradorDeCarpetas
             this.buttonCambiarCarpeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCambiarCarpeta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCambiarCarpeta.Image = ((System.Drawing.Image)(resources.GetObject("buttonCambiarCarpeta.Image")));
-            this.buttonCambiarCarpeta.Location = new System.Drawing.Point(446, 561);
+            this.buttonCambiarCarpeta.Location = new System.Drawing.Point(625, 200);
             this.buttonCambiarCarpeta.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCambiarCarpeta.Name = "buttonCambiarCarpeta";
-            this.buttonCambiarCarpeta.Size = new System.Drawing.Size(197, 51);
+            this.buttonCambiarCarpeta.Size = new System.Drawing.Size(47, 51);
             this.buttonCambiarCarpeta.TabIndex = 9;
             this.buttonCambiarCarpeta.UseVisualStyleBackColor = true;
             this.buttonCambiarCarpeta.Click += new System.EventHandler(this.buttonCambiarCarpeta_Click);
@@ -380,24 +397,24 @@ namespace AdministradorDeCarpetas
             // 
             this.label9.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
-            this.label9.Location = new System.Drawing.Point(441, 312);
+            this.label9.Location = new System.Drawing.Point(438, 342);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(31, 26);
             this.label9.TabIndex = 25;
             // 
-            // groupBox1
+            // groupBoxRandom
             // 
-            this.groupBox1.Controls.Add(this.rdbRandomNO);
-            this.groupBox1.Controls.Add(this.rdbRandomSI);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(446, 487);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(197, 39);
-            this.groupBox1.TabIndex = 26;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Crear nombres RANDOM?";
+            this.groupBoxRandom.Controls.Add(this.rdbRandomNO);
+            this.groupBoxRandom.Controls.Add(this.rdbRandomSI);
+            this.groupBoxRandom.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxRandom.ForeColor = System.Drawing.Color.White;
+            this.groupBoxRandom.Location = new System.Drawing.Point(443, 491);
+            this.groupBoxRandom.Name = "groupBoxRandom";
+            this.groupBoxRandom.Size = new System.Drawing.Size(197, 39);
+            this.groupBoxRandom.TabIndex = 26;
+            this.groupBoxRandom.TabStop = false;
+            this.groupBoxRandom.Text = "Crear nombres RANDOM?";
             // 
             // rdbRandomNO
             // 
@@ -429,7 +446,7 @@ namespace AdministradorDeCarpetas
             // 
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(446, 351);
+            this.label10.Location = new System.Drawing.Point(443, 368);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(197, 37);
             this.label10.TabIndex = 27;
@@ -440,7 +457,7 @@ namespace AdministradorDeCarpetas
             // 
             this.label11.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Image = ((System.Drawing.Image)(resources.GetObject("label11.Image")));
-            this.label11.Location = new System.Drawing.Point(11, 354);
+            this.label11.Location = new System.Drawing.Point(10, 343);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 26);
@@ -450,7 +467,7 @@ namespace AdministradorDeCarpetas
             // 
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(446, 445);
+            this.label12.Location = new System.Drawing.Point(443, 449);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(197, 39);
             this.label12.TabIndex = 29;
@@ -462,23 +479,242 @@ namespace AdministradorDeCarpetas
             this.labelCharError.AutoSize = true;
             this.labelCharError.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCharError.ForeColor = System.Drawing.Color.Red;
-            this.labelCharError.Location = new System.Drawing.Point(15, 413);
+            this.labelCharError.Location = new System.Drawing.Point(15, 403);
             this.labelCharError.Name = "labelCharError";
             this.labelCharError.Size = new System.Drawing.Size(0, 15);
             this.labelCharError.TabIndex = 30;
             this.labelCharError.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(677, 282);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 16);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Abrir Directorio";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Gold;
+            this.label14.Location = new System.Drawing.Point(963, 523);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 21);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "Contacto";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(943, 601);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(135, 16);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "© 2021 Mato Franco";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Image = ((System.Drawing.Image)(resources.GetObject("label16.Image")));
+            this.label16.Location = new System.Drawing.Point(667, 345);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(31, 26);
+            this.label16.TabIndex = 35;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Gold;
+            this.label17.Location = new System.Drawing.Point(694, 348);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 21);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "Cifrado";
+            // 
+            // txtBoxPassword
+            // 
+            this.txtBoxPassword.BackColor = System.Drawing.SystemColors.Desktop;
+            this.txtBoxPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPassword.ForeColor = System.Drawing.Color.White;
+            this.txtBoxPassword.Location = new System.Drawing.Point(672, 432);
+            this.txtBoxPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxPassword.MaxLength = 20;
+            this.txtBoxPassword.Name = "txtBoxPassword";
+            this.txtBoxPassword.Size = new System.Drawing.Size(397, 26);
+            this.txtBoxPassword.TabIndex = 36;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(668, 403);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(285, 22);
+            this.label18.TabIndex = 37;
+            this.label18.Text = "Contraseña para las carpetas";
+            // 
+            // groupBoxCifrar
+            // 
+            this.groupBoxCifrar.Controls.Add(this.rdbCifrarNO);
+            this.groupBoxCifrar.Controls.Add(this.rdbCifrarSI);
+            this.groupBoxCifrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCifrar.ForeColor = System.Drawing.Color.White;
+            this.groupBoxCifrar.Location = new System.Drawing.Point(443, 571);
+            this.groupBoxCifrar.Name = "groupBoxCifrar";
+            this.groupBoxCifrar.Size = new System.Drawing.Size(197, 39);
+            this.groupBoxCifrar.TabIndex = 38;
+            this.groupBoxCifrar.TabStop = false;
+            this.groupBoxCifrar.Text = "Cifrar carpetas?";
+            // 
+            // rdbCifrarNO
+            // 
+            this.rdbCifrarNO.AutoSize = true;
+            this.rdbCifrarNO.Checked = true;
+            this.rdbCifrarNO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbCifrarNO.Location = new System.Drawing.Point(46, 14);
+            this.rdbCifrarNO.Name = "rdbCifrarNO";
+            this.rdbCifrarNO.Size = new System.Drawing.Size(47, 20);
+            this.rdbCifrarNO.TabIndex = 1;
+            this.rdbCifrarNO.TabStop = true;
+            this.rdbCifrarNO.Text = "NO";
+            this.rdbCifrarNO.UseVisualStyleBackColor = true;
+            this.rdbCifrarNO.CheckedChanged += new System.EventHandler(this.rdbCifrarNO_CheckedChanged);
+            // 
+            // rdbCifrarSI
+            // 
+            this.rdbCifrarSI.AutoSize = true;
+            this.rdbCifrarSI.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbCifrarSI.Location = new System.Drawing.Point(6, 14);
+            this.rdbCifrarSI.Name = "rdbCifrarSI";
+            this.rdbCifrarSI.Size = new System.Drawing.Size(37, 20);
+            this.rdbCifrarSI.TabIndex = 0;
+            this.rdbCifrarSI.Text = "SI";
+            this.rdbCifrarSI.UseVisualStyleBackColor = true;
+            this.rdbCifrarSI.CheckedChanged += new System.EventHandler(this.rdbCifrarSI_CheckedChanged);
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Red;
+            this.label19.Location = new System.Drawing.Point(442, 530);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(197, 39);
+            this.label19.TabIndex = 39;
+            this.label19.Text = "* Crea contraseña para acceder a las carpetas";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // buttonGuardar
+            // 
+            this.buttonGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.buttonGuardar.FlatAppearance.BorderSize = 0;
+            this.buttonGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.buttonGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGuardar.Location = new System.Drawing.Point(672, 459);
+            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(135, 40);
+            this.buttonGuardar.TabIndex = 40;
+            this.buttonGuardar.Text = "Guardar y Cifrar";
+            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
+            // buttonGenerarRandom
+            // 
+            this.buttonGenerarRandom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGenerarRandom.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.buttonGenerarRandom.FlatAppearance.BorderSize = 0;
+            this.buttonGenerarRandom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.buttonGenerarRandom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.buttonGenerarRandom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGenerarRandom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGenerarRandom.Location = new System.Drawing.Point(957, 379);
+            this.buttonGenerarRandom.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGenerarRandom.Name = "buttonGenerarRandom";
+            this.buttonGenerarRandom.Size = new System.Drawing.Size(112, 49);
+            this.buttonGenerarRandom.TabIndex = 41;
+            this.buttonGenerarRandom.Text = "Generar Random";
+            this.buttonGenerarRandom.UseVisualStyleBackColor = true;
+            this.buttonGenerarRandom.Click += new System.EventHandler(this.buttonGenerarRandom_Click);
+            // 
+            // buttonDescifrar
+            // 
+            this.buttonDescifrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDescifrar.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.buttonDescifrar.FlatAppearance.BorderSize = 0;
+            this.buttonDescifrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.buttonDescifrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.buttonDescifrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDescifrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDescifrar.Location = new System.Drawing.Point(980, 462);
+            this.buttonDescifrar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDescifrar.Name = "buttonDescifrar";
+            this.buttonDescifrar.Size = new System.Drawing.Size(89, 40);
+            this.buttonDescifrar.TabIndex = 42;
+            this.buttonDescifrar.Text = "Descifrar";
+            this.buttonDescifrar.UseVisualStyleBackColor = true;
+            this.buttonDescifrar.Click += new System.EventHandler(this.buttonDescifrar_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.label20.Location = new System.Drawing.Point(668, 505);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(222, 22);
+            this.label20.TabIndex = 44;
+            this.label20.Text = "Contraseña del cifrado";
+            // 
+            // txtBoxPWSCifradro
+            // 
+            this.txtBoxPWSCifradro.BackColor = System.Drawing.SystemColors.Desktop;
+            this.txtBoxPWSCifradro.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPWSCifradro.ForeColor = System.Drawing.Color.White;
+            this.txtBoxPWSCifradro.Location = new System.Drawing.Point(672, 532);
+            this.txtBoxPWSCifradro.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxPWSCifradro.MaxLength = 20;
+            this.txtBoxPWSCifradro.Name = "txtBoxPWSCifradro";
+            this.txtBoxPWSCifradro.Size = new System.Drawing.Size(281, 26);
+            this.txtBoxPWSCifradro.TabIndex = 43;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.ClientSize = new System.Drawing.Size(650, 620);
+            this.ClientSize = new System.Drawing.Size(1081, 620);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.txtBoxPWSCifradro);
+            this.Controls.Add(this.buttonDescifrar);
+            this.Controls.Add(this.buttonGenerarRandom);
+            this.Controls.Add(this.buttonGuardar);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.groupBoxCifrar);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.txtBoxPassword);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.labelCharError);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxRandom);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.buttonOpenFolder);
             this.Controls.Add(this.label8);
@@ -516,8 +752,10 @@ namespace AdministradorDeCarpetas
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox0.ResumeLayout(false);
             this.groupBox0.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxRandom.ResumeLayout(false);
+            this.groupBoxRandom.PerformLayout();
+            this.groupBoxCifrar.ResumeLayout(false);
+            this.groupBoxCifrar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -550,13 +788,29 @@ namespace AdministradorDeCarpetas
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonOpenFolder;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxRandom;
         private System.Windows.Forms.RadioButton rdbRandomNO;
         private System.Windows.Forms.RadioButton rdbRandomSI;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label labelCharError;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtBoxPassword;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.GroupBox groupBoxCifrar;
+        private System.Windows.Forms.RadioButton rdbCifrarNO;
+        private System.Windows.Forms.RadioButton rdbCifrarSI;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button buttonGuardar;
+        private System.Windows.Forms.Button buttonGenerarRandom;
+        private System.Windows.Forms.Button buttonDescifrar;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtBoxPWSCifradro;
     }
 }
 
